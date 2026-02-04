@@ -1,0 +1,130 @@
+/* Container & Alignment */
+.create-student-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', sans-serif;
+  position: relative;
+}
+
+.create-student-container h2 {
+  color: #1e293b;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Form Layout */
+.student-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.student-form label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: -10px; /* Brings label closer to its input */
+}
+
+/* Inputs, Selects, and Date Pickers */
+.student-form input[type="text"],
+.student-form input[type="date"],
+.student-form select {
+  padding: 12px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #1e293b;
+  transition: all 0.2s ease;
+  background-color: #ffffff;
+}
+
+.student-form input:focus,
+.student-form select:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+/* Radio Button Styling */
+.radio-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 500 !important; /* Overriding the bold label style for radio text */
+  color: #334155 !important;
+  margin: 5px 15px 5px 0 !important;
+}
+
+.radio-label input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #4f46e5;
+  cursor: pointer;
+}
+
+/* Error Message */
+.error-text {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  border-left: 4px solid #ef4444;
+  margin-bottom: 20px;
+}
+
+/* Submit Button */
+.student-form button[type="submit"] {
+  width: 100%;
+  margin-top: 30px;
+  padding: 14px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.student-form button[type="submit"]:hover:not(:disabled) {
+  background-color: #4338ca;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+.student-form button[type="submit"]:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.close-btn {
+  position: absolute;
+  right: 0;
+  top: -5%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background-color: #fef2f2;
+  color: #ef4444;
+}
+

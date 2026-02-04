@@ -1,0 +1,77 @@
+// import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
+// import { useNavigate } from "react-router-dom";
+// import axios from "axios";
+// import Toast from "./Toast";
+// import { useState } from "react";
+
+// const FacebookLoginButton = () => {
+//   const navigate = useNavigate();
+//   const [toast, setToast] = useState<{
+//     id: number;
+//     type: "success" | "error" | "warning" | "info";
+//     message: string;
+//   } | null>(null);
+
+//   const showToast = (
+//     type: "success" | "error" | "warning" | "info",
+//     message: string
+//   ) => {
+//     setToast({
+//       id: Date.now(),
+//       type,
+//       message,
+//     });
+//   };
+
+//   // Handle success
+//   const handleSuccess = async (res: any) => {
+//     try {
+//       // Facebook returns accessToken instead of credential
+//       const response = await axios.post(
+//         "http://localhost:8000/login/facebook/",
+//         {
+//           token: res.accessToken,
+//           userID: res.userID, // optional: send Facebook userID for verification
+//         }
+//       );
+
+//       const data = response.data;
+//       localStorage.setItem("access_token", data.access_token);
+//       localStorage.setItem("refresh_token", data.refresh_token);
+//       localStorage.setItem("login_id", data.login_id);
+//       localStorage.setItem("email", data.email);
+
+//       navigate("/");
+//     } catch (error: any) {
+//       showToast("error", error.response?.data?.error || "Facebook login failed");
+//     }
+//   };
+
+//   return (
+//     <>
+//       {toast && (
+//         <Toast
+//           key={toast.id}
+//           type={toast.type as any}
+//           message={toast.message}
+//           onClose={() => setToast(null)}
+//         />
+//       )}
+//       <div className="facebook-login-wrapper">
+//         <FacebookLogin
+//           appId="YOUR_FACEBOOK_APP_ID" // replace with your FB App ID
+//           autoLoad={false}
+//           callback={handleSuccess}
+//           fields="name,email,picture"
+//           render={(renderProps: any) => (
+//             <button onClick={renderProps.onClick} className="facebook-btn">
+//               <img src="/facebook-icon.png" alt="Facebook" style={{ width: 24 }} />
+//             </button>
+//           )}
+//         />
+//       </div>
+//     </>
+//   );
+// };
+
+// export default FacebookLoginButton;

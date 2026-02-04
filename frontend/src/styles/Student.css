@@ -1,0 +1,336 @@
+/* Container & Layout */
+.student-container {
+  max-width: 1300px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Header Section */
+.student-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.student-header h2 {
+  font-size: 1.5rem;
+  color: #1a202c;
+  margin: 0;
+}
+
+.count-tag {
+  font-size: 0.85rem;
+  color: #718096;
+  background: #f7fafc;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-left: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+/* Table Styling */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.student-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.student-table tbody {
+  min-height: 200px;  
+}
+
+
+
+.student-table th {
+  background: #f8fafc;
+  color: #4a5568;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  padding: 16px;
+  border-bottom: 2px solid #edf2f7;
+}
+
+.student-table td {
+  padding: 16px;
+  vertical-align: middle;
+  border-bottom: 1px solid #edf2f7;
+  color: #2d3748;
+  font-size: 0.95rem;
+}
+
+.student-table tr:hover td {
+  background-color: #fcfcfd;
+}
+
+/* Specific Cell Styling */
+.roll-cell { font-weight: 700; color: #4a5568; }
+.name-cell { font-weight: 600; color: #2d3748; }
+.email-cell { color: #718096; }
+
+/* Badges & Tags */
+.gender-badge {
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.gender-badge.male { background: #ebf8ff; color: #2b6cb0; }
+.gender-badge.female { background: #fff5f7; color: #9b2c2c; }
+
+.course-tag {
+  background: #f0fff4;
+  color: #276749;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: monospace;
+  border: 1px solid #c6f6d5;
+}
+
+/* Button UI */
+.btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.create-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.create-btn:hover { background: #2b6cb0; box-shadow: 0 4px 12px rgba(49, 130, 206, 0.3); }
+
+.update-btn {
+  background: transparent;
+  color: #3182ce;
+  border: 1px solid #3182ce;
+  margin-right: 8px;
+}
+
+.update-btn:hover { background: #3182ce; color: white; }
+
+.delete-btn {
+  background: transparent;
+  color: #e53e3e;
+  border: 1px solid #e53e3e;
+}
+
+.delete-btn:hover { background: #e53e3e; color: white; }
+
+.no-data {
+  text-align: center;
+  padding: 40px !important;
+  color: #a0aec0;
+  font-style: italic;
+}
+
+.noblur
+{
+  position: relative;
+}
+/* Blur background */
+.blurred {
+  filter: blur(5px);
+  pointer-events: none; /* Make background unclickable */
+  user-select: none;
+  transition: filter 0.3s ease;
+}
+
+/* Modal overlay *//* Wrapper (optional but safe) */
+.student-model {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+}
+
+/* Overlay */
+.student-model .modal-overlay {
+  position: fixed;           /* 🔥 must be fixed */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;             /* 🔥 full screen */
+  background: rgba(0, 0, 0, 0.45);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal box */
+.student-model .modal-content {
+  position: relative;        /* 🔴 REQUIRED for absolute button */
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Cancel (X) button */
+.student-model .cancle-btn {
+  position: absolute;
+  top: 100px;
+  right: 25px;
+
+  width: 34px;
+  height: 34px;
+
+  background-color: #2d3748;
+  color: #ffffff;
+
+  border: none;
+  border-radius: 50%;
+
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 10;               /* 🔥 ensures visibility */
+}
+
+
+
+/* ---------page buttons--------- */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.page-btn {
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.page-btn:hover:not(:disabled) {
+  background-color: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+.page-btn:disabled {
+  cursor: not-allowed;
+  background-color: #f3f4f6;
+  color: #9ca3af;
+  border-color: #e5e7eb;
+}
+
+.page-info {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+/* Styling for the Select Menu Container in the header */
+.student-header select {
+  padding: 10px 35px 10px 15px; /* Extra padding on right for custom arrow */
+  font-size: 0.95rem;
+  color: #2d3748;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+  
+  /* Remove default browser arrow */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  
+  /* Add a custom SVG arrow background */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234a5568'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  
+  min-width: 180px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Hover State */
+.student-header select:hover {
+  border-color: #cbd5e0;
+  background-color: #f8fafc;
+}
+
+/* Focus State */
+.student-header select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  background-color: #ffffff;
+}
+
+/* Styling for the Options */
+.student-header select option {
+  padding: 10px;
+  background-color: #ffffff;
+  color: #2d3748;
+}
+
+.enable-btn {
+  background: transparent;
+  color:#22c55e;
+  border: 1px solid #22c55e
+}
+
+.enable-btn:hover {
+  background: #22c55e; 
+  color: white;
+}
+
+.disable-btn {
+  background: transparent;
+  color: #e53e3e;
+  border: 1px solid #e53e3e;
+}
+
+.disable-btn:hover {
+  background: #e53e3e; 
+  color: white;
+}
+
+
+.unblock-btn {
+  background: transparent;
+  color:#22c55e;
+  border: 1px solid #22c55e
+}
+
+.block-btn {
+  background: transparent;
+  color: #e53e3e;
+  border: 1px solid #e53e3e;
+}

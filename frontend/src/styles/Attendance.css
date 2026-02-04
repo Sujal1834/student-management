@@ -1,0 +1,135 @@
+/* Container */
+.attendance-container {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  margin-top: 20px;
+}
+
+.attendance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Table */
+.attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Inter", sans-serif;
+}
+
+/* Header */
+.attendance-table thead {
+  background: #f8fafc;
+}
+
+.attendance-table th {
+  text-align: left;
+  padding: 14px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Rows */
+.attendance-table td {
+  padding: 16px;
+  font-size: 14px;
+  color: #0f172a;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.attendance-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+/* Checkbox */
+.attendance-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+/* Submit button */
+.attendance-submit {
+  margin-top: 18px;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.attendance-submit:hover {
+  background: #1e40af;
+  transform: translateY(-1px);
+}
+
+/* Styling for the Select Menu Container in the header */
+.attendance-header select {
+  padding: 10px 35px 10px 15px; /* Extra padding on right for custom arrow */
+  font-size: 0.95rem;
+  color: #2d3748;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+  
+  /* Remove default browser arrow */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  
+  /* Add a custom SVG arrow background */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234a5568'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  
+  min-width: 180px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Hover State */
+.attendance-header select:hover {
+  border-color: #cbd5e0;
+  background-color: #f8fafc;
+}
+
+/* Focus State */
+.attendance-header select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  background-color: #ffffff;
+}
+
+/* Styling for the Options */
+.attendance-header select option {
+  padding: 10px;
+  background-color: #ffffff;
+  color: #2d3748;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .attendance-table th,
+  .attendance-table td {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .attendance-submit {
+    width: 100%;
+  }
+}

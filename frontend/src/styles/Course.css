@@ -1,0 +1,259 @@
+/* ===== Container ===== */
+.course-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 30px 35px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== Header ===== */
+.course-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.course-header h2 {
+  margin: 0;
+  color: #1f2937; /* dark gray */
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* =======searchbar============= */
+/* ===== Search Bar ===== */
+.search-wrapper {
+  position: relative;
+  width: 260px;
+}
+
+.search-wrapper input {
+  width: 100%;
+  padding: 10px 14px;
+  padding-left: 38px; /* space for icon */
+  border-radius: 10px;
+  border: 1px solid #e5e7eb; /* gray-300 */
+  font-size: 14px;
+  color: #1f2937;
+  background-color: #ffffff;
+  outline: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Focus effect */
+.search-wrapper input:focus {
+  border-color: #2563eb; /* same as create btn */
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Placeholder */
+.search-wrapper input::placeholder {
+  color: #9ca3af;
+}
+
+/* Search icon */
+.search-wrapper::before {
+  content: "🔍";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+
+
+/* ===== Buttons ===== */
+.btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+/* Create button - primary */
+.create-btn {
+  background-color: #2563eb; /* Indigo */
+  color: #fff;
+}
+
+.create-btn:hover {
+  background-color: #4338ca;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+/* Update button - warning */
+.update-btn {
+  background-color: #f59e0b; /* Amber */
+  color: #fff;
+}
+
+.update-btn:hover {
+  background-color: #d97706;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+/* Delete button - danger */
+.delete-btn {
+  background-color: #ef4444; /* Red */
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background-color: #b91c1c;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* ===== Table ===== */
+.course-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px; /* space between rows */
+}
+
+.course-table th {
+  background-color: #f3f4f6; /* light gray */
+  color: #374151; /* gray-700 */
+  font-weight: 600;
+  padding: 14px 12px;
+  text-align: left;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.course-table td {
+  background-color: #ffffff;
+  color: #1f2937;
+  padding: 12px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+/* Row hover effect */
+.course-table tr:hover td {
+  background-color: #f9fafb;
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+}
+
+.course-table td:nth-child(3) {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* No data */
+.no-data {
+  text-align: center;
+  padding: 25px;
+  color: #6b7280; /* gray-500 */
+  font-style: italic;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .course-table th,
+  .course-table td {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+
+  .course-header h2 {
+    font-size: 22px;
+  }
+
+  .btn {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+}
+
+/* Blur background */
+.blurred {
+  filter: blur(5px);
+  pointer-events: none; /* Make background unclickable */
+  user-select: none;
+  transition: filter 0.3s ease;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed; /* Covers entire viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.4); /* semi-transparent dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal box */
+.modal-content {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  z-index: 1001;
+}
+
+
+/* ----------pagination-------------- */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px auto;
+  width: fit-content;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2563eb; /* blue */
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+.pagination button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.pagination button:disabled {
+  background-color: #cbd5e1; /* light gray */
+  color: #64748b;
+  cursor: not-allowed;
+}
+
+.pagination span,
+.pagination .page-info {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  padding: 0 6px;
+}

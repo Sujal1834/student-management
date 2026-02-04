@@ -1,0 +1,329 @@
+/* ===== GLOBAL ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+.assignment-container {
+max-width: 1100px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+/* ===== HEADER ===== */
+.assignment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.assignment-header h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+/* ===== BUTTONS ===== */
+.assignment-container .btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.assignment-container .create-btn {
+  background-color: #2563eb;
+  color: white;
+}
+
+.assignment-container .create-btn:hover {
+  background-color: #1e40af;
+}
+
+.assignment-container .update-btn {
+  background-color: #16a34a;
+  color: white;
+}
+
+.assignment-container .update-btn:hover {
+  background-color: #15803d;
+}
+
+.assignment-container .save-btn {
+  background-color: #2563eb;
+  color: white;
+}
+
+.assignment-container .save-btn:hover {
+  background-color: #1e40af;
+}
+
+.assignment-container .cancel-btn {
+  background-color: #e5e7eb;
+  color: #333;
+}
+
+.assignment-container .cancel-btn:hover {
+  background-color: #d1d5db;
+}
+
+/* ===== TABLE ===== */
+.assignment-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.assignment-table th,
+.assignment-table td {
+  padding: 12px;
+  text-align: left;
+}
+
+.assignment-table th {
+  background-color: #f3f4f6;
+  font-weight: 600;
+  color: #374151;
+}
+
+.assignment-table tr {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.assignment-table tr:hover {
+  background-color: #f9fafb;
+}
+
+.assignment-table a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.assignment-table a:hover {
+  text-decoration: underline;
+}
+
+/* ===== MODAL OVERLAY ===== */
+.assignment-container .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* ===== MODAL ===== */
+.assignment-container .modal {
+  background: #ffffff;
+  width: 600px; /* same as create-student form */
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+/* ===== CLOSE BUTTON ===== */
+.assignment-container .close-btn {
+  position: absolute;
+  right: 0;
+  top: -5%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.assignment-container .close-btn:hover {
+  background-color: #fef2f2;
+  color: #ef4444;
+}
+
+/* ===== MODAL TITLE ===== */
+.assignment-container .modal-title {
+  color: #1e293b;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* ===== FORM GROUP ===== */
+.assignment-container .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.assignment-container .form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: -5px;
+}
+
+/* ===== INPUTS, TEXTAREA, SELECT ===== */
+.assignment-container .form-group input,
+.assignment-container .form-group textarea,
+.assignment-container .form-group select {
+  padding: 12px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #1e293b;
+  transition: all 0.2s ease;
+  background-color: #ffffff;
+}
+
+.assignment-container .form-group input:focus,
+.assignment-container .form-group textarea:focus,
+.assignment-container .form-group select:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+.assignment-container .form-group textarea {
+  resize: none;
+  min-height: 80px;
+}
+
+/* ===== RADIO BUTTONS (if any) ===== */
+.assignment-container .radio-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 500 !important;
+  color: #334155 !important;
+  margin: 5px 15px 5px 0 !important;
+}
+
+.assignment-container .radio-label input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #4f46e5;
+  cursor: pointer;
+}
+
+/* ===== ERROR MESSAGES ===== */
+.assignment-container .error-text {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  border-left: 4px solid #ef4444;
+  margin-bottom: 20px;
+}
+
+/* ===== FORM ACTIONS ===== */
+.assignment-container .form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.assignment-container .save-btn,
+.assignment-container .cancel-btn {
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.assignment-container .save-btn {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+.assignment-container .save-btn:hover {
+  background-color: #4338ca;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+.assignment-container .cancel-btn {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+.assignment-container .cancel-btn:hover {
+  background-color: #e2e8f0;
+}
+
+
+
+.home-container-spin {
+  padding-top: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spin {
+  height: 100px;
+  width: 100px;
+  background: transparent;
+  border-radius: 50%;
+  border-top: 10px solid brown;
+  border-bottom: 10px solid chocolate;
+  animation: spin 1s linear infinite;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 500px) {
+  .modal {
+    width: 90%;
+  }
+
+  .assignment-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}

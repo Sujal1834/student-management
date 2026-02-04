@@ -1,0 +1,221 @@
+/* Page layout */
+.student-attendance-page {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 30px;
+  padding: 30px;
+  background: #f6f8fb;
+}
+
+/* =====================
+   Annual Attendance Card
+===================== */
+.annual-attendance-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.annual-attendance-card h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.annual-attendance-card h2 {
+  margin-top: 10px;
+  font-size: 36px;
+  color: #4caf50;
+}
+
+.annual-attendance-card .green-percentage{
+    color: #22c55e;
+}
+
+.annual-attendance-card .red-percentage{
+    color:#d32f2f;
+}
+
+/* =====================
+   Monthly Summary
+===================== */
+.attendance-summary {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  border-radius: 12px;
+  gap: 50px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.attendance-summary h2 {
+  margin-bottom: 15px;
+}
+
+.attendance-form {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    gap: 220px;
+}
+
+/* Filters */
+.attendance-filters {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.attendance-filters {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-item label {
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.attendance-filters input {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 180px;
+}
+
+.attendance-filters button {
+  padding: 8px 16px;
+  border: none;
+  background: #1976d2;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 180px;
+}
+
+.attendance-filters button:hover {
+  background: #125aa0;
+}
+
+/* Cards */
+.attendance-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.attendance-card {
+  border: 1px solid #e0e0e0;
+  padding: 16px;
+  border-radius: 10px;
+  background: #fafafa;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.30);
+  transition: transform 0.2s ease;
+}
+
+.attendance-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.30);
+}
+
+.attendance-card h3 {
+  margin-top: 10px;
+  font-size: 28px;
+  color: #2e7d32;
+}
+
+/* Status colors */
+.present {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.absent {
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+.progress-wrapper {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: auto;
+}
+
+.progress-wrapper svg {
+  transform: rotate(-90deg);
+}
+
+.progress-bg {
+  fill: none;
+  stroke: #e5e7eb;
+}
+
+.progress-bar {
+  fill: none;
+  /* stroke: #22c55e; green */
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.2s ease;
+}
+
+.progress-green {
+  stroke: #22c55e;
+}
+
+/* Red stroke */
+.progress-red {
+  stroke: #d32f2f;
+}
+
+.progress-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.progress-text .green-percentage {
+    color: #22c55e;
+}
+
+.progress-text .red-percentage {
+    color: #d32f2f;
+}
+
+
+.home-container-spin {
+  padding-top: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spin {
+  height: 100px;
+  width: 100px;
+  background: transparent;
+  border-radius: 50%;
+  border-top: 10px solid brown;
+  border-bottom: 10px solid chocolate;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

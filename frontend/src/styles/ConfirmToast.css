@@ -1,0 +1,84 @@
+.confirm-toast-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4000;
+}
+
+.confirm-toast {
+  background: #fff;
+  padding: 24px 28px;
+  border-radius: 14px;
+  min-width: 320px;
+  max-width: 400px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.confirm-toast p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+
+.confirm-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.confirm-buttons .btn {
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.confirm-yes {
+  background: #ef4444;
+  color: white;
+}
+
+.confirm-yes:hover {
+  background: #dc2626;
+}
+
+.confirm-no {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.confirm-no:hover {
+  background: #d1d5db;
+}
+
+.confirm-input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.confirm-input::placeholder {
+  color: #9ca3af;
+}
+
+.confirm-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.confirm-yes:disabled {
+  background: #fca5a5;
+  cursor: not-allowed;
+}
