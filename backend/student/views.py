@@ -16,6 +16,7 @@ from .google_auth import verify_google_token
 from django.core.mail import send_mail
 import uuid;
 from django.core.cache import cache;
+from .csv_exporter import add_attendance_to_csv
 
 # Create your views here.
 
@@ -908,6 +909,7 @@ class TodayAttendance(APIView):
 
         try:
             db_utils.add_attendance(student_id, faculty_id, course_id, date, attendance_status)
+            add_attendance_to_csv(student_id, faculty_id, course_id, date, attendance_status)
         except:
             return Response( {"error": "Already submitted Today's attendance"},status=status.HTTP_400_BAD_REQUEST)
 
